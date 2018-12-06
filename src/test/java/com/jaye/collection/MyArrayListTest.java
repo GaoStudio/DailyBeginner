@@ -21,8 +21,4 @@ public class MyArrayListTest {
     public void mClone() {
         new MyArrayList().mClone();
     }
-    @Test
-    public void IteratorList(){new MyArrayList().IteratorList();}
-    @Test
-    public void SubList(){new MyArrayList().SubList();}
 }
