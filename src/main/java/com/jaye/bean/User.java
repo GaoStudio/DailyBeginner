@@ -1,6 +1,4 @@
-package com.jaye.collection.bean;
-
-import javax.jws.soap.SOAPBinding;
+package com.jaye.bean;
 
 /**
  * Program: java

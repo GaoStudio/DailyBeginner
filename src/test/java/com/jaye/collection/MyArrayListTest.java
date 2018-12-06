@@ -1,8 +1,7 @@
 package com.jaye.collection;
 
+import com.jaye.collection.arraylist.MyArrayList;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Program: java
@@ -22,4 +21,8 @@ public class MyArrayListTest {
     public void mClone() {
         new MyArrayList().mClone();
     }
+    @Test
+    public void IteratorList(){new MyArrayList().IteratorList();}
+    @Test
+    public void SubList(){new MyArrayList().SubList();}
 }
