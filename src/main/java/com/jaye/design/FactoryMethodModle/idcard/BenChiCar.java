@@ -1,6 +1,7 @@
 package com.jaye.design.FactoryMethodModle.idcard;
 
 import com.jaye.design.FactoryMethodModle.framework.Car;
+import com.jaye.design.FactoryMethodModle.framework.CarImpl;
 
 /**
  * Program: java
@@ -10,8 +11,9 @@ import com.jaye.design.FactoryMethodModle.framework.Car;
  * Description:
  **/
 
-public class BenChiCar extends Car{
-    public BenChiCar(String name) {
-        super(name);
+public class BenChiCar extends CarImpl{
+    @Override
+    public void makeDeng() {
+
     }
 }

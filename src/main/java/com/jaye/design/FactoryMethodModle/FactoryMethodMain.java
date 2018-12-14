@@ -2,6 +2,7 @@ package com.jaye.design.FactoryMethodModle;
 
 import com.jaye.design.FactoryMethodModle.framework.Car;
 import com.jaye.design.FactoryMethodModle.framework.Factory;
+import com.jaye.design.FactoryMethodModle.idcard.BaoMaCar;
 import com.jaye.design.FactoryMethodModle.idcard.BenChiFactory;
 
 /**
@@ -14,9 +15,9 @@ import com.jaye.design.FactoryMethodModle.idcard.BenChiFactory;
 
 public class FactoryMethodMain {
     public static void main(String[] args) {
-        Factory benChiFactory = new BenChiFactory();
-        Car c200 =  benChiFactory.createCar("C200");
-        Car c350 = benChiFactory.createCar("c350");
-
+        //Factory benChiFactory = new BenChiFactory();
+        //Car c200 =  benChiFactory.createCar("C200");
+        //Car c350 = benChiFactory.createCar("c350");
+        new BaoMaCar();
     }
 }

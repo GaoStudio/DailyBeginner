@@ -14,6 +14,6 @@ import com.jaye.design.FactoryMethodModle.framework.Factory;
 public class BaoMaFactory extends Factory{
     @Override
     public Car createCar(String owner) {
-        return new BaoMaCar(owner);
+        return new BaoMaCar();
     }
 }

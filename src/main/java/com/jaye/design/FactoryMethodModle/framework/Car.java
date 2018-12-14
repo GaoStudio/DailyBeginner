@@ -8,10 +8,8 @@ package com.jaye.design.FactoryMethodModle.framework;
  * Description:
  **/
 
-public abstract class Car {
-    private String name;
+public  interface Car {
+    public static String name = "车";
+    void makeDeng();
 
-    public Car(String name) {
-        this.name = name;
-    }
 }
