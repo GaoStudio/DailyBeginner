@@ -56,6 +56,10 @@ public class CollectionMain {
         //System.out.println(Object[].class);
         //System.out.println(objs.getClass());
     }
+    public static void HashTable(){
+        Hashtable hashTable = new Hashtable();
+        hashTable.put("A",1);
+    }
     public static void HashMap(){
         HashMap hashMap = new HashMap(0);
         hashMap.put("A","ABCD");
@@ -65,6 +69,7 @@ public class CollectionMain {
         hashMap.putIfAbsent("D","ABCD");
         System.out.println(hashMap.entrySet().size());
         System.out.println(hashMap.get("D"));
+        hashMap.keySet().iterator();
         //HashMap.
     }
     //List
