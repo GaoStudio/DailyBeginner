@@ -1,5 +1,6 @@
 package com.jaye.collection;
 
+import javax.lang.model.util.ElementScanner6;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -29,17 +30,65 @@ public class CollectionMain {
     static final int MAXIMUM_CAPACITY = 1 << 30;
     public static void main(String[] args) {
         //CollectionMain.ArrayList();
-        //CollectionMain.LinkList();
+        //CollectionMain.LinkList();。
         //10000>>>3 =
        /* System.out.println(-16>>>1);
         System.out.println(-16>>>2);*/
-        CollectionMain.HashMap();
+       // CollectionMain.HashMap();
         //System.out.println(tableSizeFor(16));
         //System.out.println(8|2);
         //CollectionMain.Set();
         //CollectionMain.Vector();
         //CollectionMain.Foreach();
         //CollectionMain.Test();
+        //System.out.println(tryCatch()+"");
+        testInteger();
+    }
+
+//    public String add(List<String> strings){
+//        return "";
+//    }
+    private class ScanName extends ElementScanner6{
+
+    };
+    public static void testInteger(){
+        int temp = 200;
+        int intA = 200;
+        Integer a = temp;
+        Integer b = temp;
+        Integer c = new Integer(temp);
+        Integer d =new Integer( temp);
+        System.out.println(intA==b);
+        System.out.println(a.equals(intA));
+        System.out.println(a==b);
+        System.out.println(a.equals(b));
+        System.out.println(a==c);
+        System.out.println(a.equals(c));
+        System.out.println(a==d);
+        System.out.println(a.equals(d));
+        System.out.println(c==d);
+        System.out.println(c.equals(d));
+    }
+    public static int add(List<Integer> integers){
+       final int a = 1;
+        boolean b = false;
+        char c = 1;
+        //a = 2;
+        return 1;
+    }
+    public static int tryCatch(){
+        int i = 0;
+        try{
+            i = 1;
+            //return  i;
+        }catch (Exception e){
+            i = 2;
+            return i;
+        }finally {
+            i =3 ;
+
+        }
+        return i;
     }
     static final int tableSizeFor(int cap) {
         int n = cap ;
@@ -63,6 +112,7 @@ public class CollectionMain {
         hashMap.put("C","CABD");
         hashMap.put("D","DABC");
         hashMap.putIfAbsent("D","ABCD");
+
         System.out.println(hashMap.entrySet().size());
         System.out.println(hashMap.get("D"));
         //HashMap.
