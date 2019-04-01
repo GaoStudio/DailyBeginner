@@ -56,26 +56,36 @@ public class CollectionMain {
         //System.out.println(Object[].class);
         //System.out.println(objs.getClass());
     }
+    public static void Collection(){
+
+    }
     public static void HashTable(){
         Hashtable hashTable = new Hashtable();
         hashTable.put("A",1);
     }
+    public static void LinkHashMap(){
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        linkedHashMap.put("A","ABCD");
+    }
     public static void HashMap(){
         HashMap hashMap = new HashMap(0);
         hashMap.put("A","ABCD");
-        hashMap.put("B","BACD");
-        hashMap.put("C","CABD");
         hashMap.put("D","DABC");
-        hashMap.putIfAbsent("D","ABCD");
-        System.out.println(hashMap.entrySet().size());
-        System.out.println(hashMap.get("D"));
-        hashMap.keySet().iterator();
+        hashMap.put("C","CABD");
+        hashMap.put("B","BACD");
+        //hashMap.putAll();
+
+        System.out.println(hashMap);
+        LinkedHashMap linkedHashMap = new LinkedHashMap(hashMap);
+        System.out.println(linkedHashMap);
+        //System.out.println(hashMap.get("D"));
+        //hashMap.keySet().iterator();
         //HashMap.
     }
     //List
     public static void ArrayList(){
 
-        List<String> arrayList = Arrays.asList("AAA","BBB");
+        List<String> arrayList = new ArrayList<>();
         Object[] objects =  arrayList.toArray();
         //Arrays.asList("CCC");
         System.out.println(objects.getClass());
@@ -100,6 +110,7 @@ public class CollectionMain {
         vector.add("CCC");
         vector.add("DDD");
         vector.add(4,"EEE");
+        Collections.sort(vector);
         //List list = vector.subList(1,vector.size());
         //list.add("EEE");
        /* Iterator iterator = vector.iterator();

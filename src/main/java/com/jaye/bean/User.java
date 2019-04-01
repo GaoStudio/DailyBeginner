@@ -8,7 +8,7 @@ package com.jaye.bean;
  * Description:
  **/
 
-public class User {
+public class User{
     private String userName;
     private String userPhone;
 
@@ -45,4 +45,6 @@ public class User {
         }
         return false;
     }
+
+
 }
