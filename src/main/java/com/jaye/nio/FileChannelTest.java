@@ -4,6 +4,8 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.channels.Selector;
+import java.nio.charset.Charset;
 
 /**
  * Program: java
@@ -41,7 +43,57 @@ public class FileChannelTest {
             }
         }
     }
+    public void wirteBuffer(){
+        try {
+//            File file = new File("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data.txt");
+//            RandomAccessFile aFile = new RandomAccessFile(file, "rw");
+//            FileChannel fc = aFile.getChannel();
+//            ByteBuffer bf = ByteBuffer.wrap("SOME TIME".getBytes("UTF-16BE"));
+//            fc.write(bf);
+//            bf.flip();
+//            fc.read(bf);
+//            bf.clear();
+            //System.out.println(bf.asCharBuffer().length());
+            FileChannel fc = new FileOutputStream("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data2.txt").getChannel();
+            ByteBuffer bf = ByteBuffer.allocate(24);
+            bf.asCharBuffer().put("SOME TEXT");
+            fc.write(bf);
+            fc.close();
 
+            FileChannel fc2 = new FileInputStream("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data2.txt").getChannel();
+            bf.clear();
+            fc2.read(bf);
+            bf.flip();
+            CharBuffer cb = bf.asCharBuffer();
+            if(cb.hasRemaining()){
+
+            }
+            System.out.println(cb);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void readBuffer(){
+        try {
+            File file = new File("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data.txt");
+            RandomAccessFile aFile = new RandomAccessFile(file, "rw");
+            FileChannel fc = aFile.getChannel();
+            ByteBuffer bf = ByteBuffer.allocate(28);
+            fc.read(bf);
+            bf.flip();
+            System.out.println(bf.getChar());
+            bf.rewind();
+            String encodeing = System.getProperty("file.encodeing");
+            System.out.println(Charset.forName("UTF-8").decode(bf));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
     public void readLineByNio() {
         try {
             File file = new File("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data.txt");
@@ -49,7 +101,6 @@ public class FileChannelTest {
             FileChannel inChannel = aFile.getChannel();
 
             ByteBuffer buf = ByteBuffer.allocate(1024);
-
             int bytesRead = inChannel.read(buf);
             while (bytesRead != -1) {
 
@@ -69,5 +120,16 @@ public class FileChannelTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void selectorChannel(){
+        try {
+            File file = new File("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data.txt");
+            RandomAccessFile aFile = new RandomAccessFile(file, "rw");
+            FileChannel fileChannel = aFile.getChannel();
+            Selector selector = Selector.open();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

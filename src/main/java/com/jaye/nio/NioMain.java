@@ -17,7 +17,7 @@ public class NioMain {
 
     public static void main(String[] args) {
         FileChannelTest fileChannel = new FileChannelTest();
-        fileChannel.readLineByNio();
+        fileChannel.wirteBuffer();
         //fileChannel.readLineByNio();
     }
 }
