@@ -1,7 +1,6 @@
 package com.jaye.collection;
 
 import com.jaye.collection.arraylist.MyArrayList;
-import org.junit.Test;
 
 /**
  * Program: java
@@ -13,11 +12,11 @@ import org.junit.Test;
 
 public class MyArrayListTest {
 
-    @Test
+   // @Test
     public void add() {
         new MyArrayList().add();
     }
-    @Test
+   // @Test
     public void mClone() {
         new MyArrayList().mClone();
     }

@@ -17,8 +17,14 @@ import java.nio.charset.Charset;
 
 public class FileChannelTest {
     public void readLineByIo() {
-        File file = new File("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data.txt");
+        File file = new File("/Users/gaowei/dev/workspace/JavaProject/DailyBeginner/src/main/java/com/jaye/nio/data.txt");
         FileInputStream fileInputStream = null;
+        file.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return false;
+            }
+        });
         try {
             System.out.println(file.getAbsoluteFile());
             fileInputStream = new FileInputStream(file);
@@ -96,7 +102,7 @@ public class FileChannelTest {
     }
     public void readLineByNio() {
         try {
-            File file = new File("/Users/tidebuy/dev/wordspace/javaweb/LeetCode/src/main/java/com/jaye/nio/data.txt");
+            File file = new File("/Users/gaowei/dev/workspace/JavaProject/DailyBeginner/src/main/java/com/jaye/nio/data.txt");
             RandomAccessFile aFile = new RandomAccessFile(file, "rw");
             FileChannel inChannel = aFile.getChannel();
 

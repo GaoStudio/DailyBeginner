@@ -1,48 +1,48 @@
 package com.jaye.basic;
 
-import sun.util.resources.fr.CurrencyNames_fr_CA;
-
 import java.util.Random;
 
-/**
- * Program: java
- * Author: Gaowei
- * Date: 2019-01-15 09:30
- * Email: gaoweivf@aliyun.com
- * Description:
- **/
-
-public class BasicMain extends BasicMainFather{
-    public static final int FACTOR = new Random().nextInt(10);
-    static {
-        System.out.println("BasicMain: static");
+public class BasicMain {
+    private static final SubBasicMain j  = new SubBasicMain("A");
+    public BasicMain(){
+        //j = 0;
     }
-
-    public BasicMain() {
-        System.out.println("BasicMain: construstor");
-    }
+    private void add(){}
+    //private static final SubConstMain subConstMain= new SubConstMain();
     public static void main(String[] args) {
-        new BasicMain();
-        //float a = 0.1f;
-        //float b = 0.2f;
-        //if(a+b==0.3){
-        //    System.out.println("相等");
-        //}
-        String s = new String("Café \uD83C\uDF69");
+        SubBasicMain subBasicMain = new SubBasicMain("A");
+        subBasicMain = new SubBasicMain("B");
+        subBasicMain.show();
+        String s = "A";
+        s = s + "B";
         System.out.println(s);
-        System.out.println(s.length()+"");
-        //System.out.println(Integer.toBinaryString(Float.floatToIntBits(a)));
-        //System.out.println(Integer.toBinaryString(Float.floatToRawIntBits(a+b)));
-        //System.out.println("FACTOR:"+FACTOR);
+        BasicMain.j.show();
+        BasicMain.j.setS("SSS");
+        BasicMain.j.show();
+        //System.out.println();
+
+        System.out.println(SubConstMain.staticString);
     }
 }
-class BasicMainFather{
-    static {
-        System.out.println("BasicMainFather: static");
+class SubConstMain{
+    public static String staticString  = "staticString";
+    public static final String staticFinalString  = "staticFinalString";
+    public SubConstMain(){
+        System.out.println("SubConstMain");
+    }
+}
+final class SubBasicMain{
+    private String s;
+    public SubBasicMain(String s){
+        this.s = s;
     }
 
-    public BasicMainFather() {
-        System.out.println("BasicMainFather: construstor");
+    public void setS(String s) {
+        this.s = s;
+    }
+
+    public void show(){
+        System.out.println(s);
     }
 
 }
