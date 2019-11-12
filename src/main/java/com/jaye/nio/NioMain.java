@@ -3,7 +3,6 @@ package com.jaye.nio;
 import java.io.FileNotFoundException;
 import java.io.RandomAccessFile;
 
-import static sun.jvm.hotspot.runtime.PerfMemory.start;
 
 /**
  * Program: java
